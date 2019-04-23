@@ -21,11 +21,17 @@ weather = json_data['weather'][0]
 
 Main = json_data['weather'][0]['main']
 Description = json_data['weather'][0]['description']
-Rain = json_data['rain']
 print('Forcast for ', city)
 print(Main, Description)
 
-if len(Rain) > 0:
-    print('It will rain: ', Rain)
-elif len(Rain) == 0:
+try:
+    Rain = json_data['rain']
+    if len(Rain) > 0:
+        print('It will rain: ', Rain)
+    elif len(Rain) == 0:
+        print('No rain today!!!')
+except:
     print('No rain today!!!')
+
+
+
