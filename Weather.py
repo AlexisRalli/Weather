@@ -2,7 +2,14 @@ import json
 import requests
 
 
-key = '623bafaf516827fba2b5a2e1c329b274'
+#import os
+#cwd = os.getcwd()
+
+with open('key.json') as f:
+    data = json.loads(f.read())
+    key=data['key']
+
+
 Web_Url = 'http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID='
 #city = 'Cleveland'
 
